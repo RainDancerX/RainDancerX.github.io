@@ -1,0 +1,32 @@
+/*
+make the form in vertical alignment
+make the label and input in the same line
+*/
+
+.form-area {
+  width: 50%;
+  margin: 0 auto;
+  form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    input {
+      margin: 20px 0;
+      width: 50%;
+    }
+    textarea {
+      margin: 20px 0;
+      width: 70%;
+    }
+    button {
+      margin: 20px 0;
+      width: 20%;
+    }
+  }
+}
