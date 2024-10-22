@@ -28,14 +28,20 @@ make the label and input in the same line
       width: 60px;
     }
   }
-  .goBack:hover {
+  .goBack {
     width: 80px;
-    cursor: pointer;
-    color: #f1c40f;
+    &:hover {
+      cursor: pointer;
+      color: #f1c40f;
+    }
   }
 }
 
 @media (max-width: 768px) {
+  main {
+    margin-top: 20px;
+    height: 100vh;
+  }
   .form-container {
     form {
       width: 60%;

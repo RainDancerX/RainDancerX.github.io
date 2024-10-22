@@ -3,6 +3,7 @@ main {
   flex-direction: row; */
   display: grid;
   grid-template-columns: 1fr 2fr;
+  position: relative;
 }
 
 h1 {
@@ -28,18 +29,30 @@ section {
   justify-content: center;
   align-items: center;
   ul {
+    max-height: 350px;
+    overflow-y: auto;
     list-style-type: none;
     padding: 0;
     li {
-      margin: 30px;
+      margin: 15px;
       border: 1px solid white;
       border-radius: 40px;
-      padding: 10px 30px;
+      padding: 8px 30px;
       text-align: center;
+      /* vertical-align: middle; */
+      transition: 0.3s;
       a {
+        /* vertical-align: middle; */
         text-decoration: none;
         color: white;
         font-size: 1.5em;
+      }
+      button {
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        color: rgb(200, 72, 121);
+        font-size: 1.5em;
+        cursor: pointer;
       }
       &:hover {
         background-color: rgba(255, 255, 255, 0.1);
@@ -54,27 +67,69 @@ img {
   border-radius: 50%;
 }
 
+#add-button {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  background-color: rgb(200, 72, 121);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgb(255, 0, 0);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+#link-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  #link-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .form-field {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 5px;
+    }
+    .submit {
+      align-self: center;
+      margin-top: 10px;
+    }
+  }
+}
+
 @media (max-width: 768px) {
+  img {
+    width: 150px;
+    height: 150px;
+  }
+
   main {
     margin-top: 20px;
     /* flex-direction: column; */
-    height: auto;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  side,
-  section {
-    flex: none;
-    width: 100%;
-  }
-
   section ul li {
-    margin: 20px;
-  }
-
-  img {
-    width: 150px;
-    height: 150px;
+    margin: 10px;
+    padding: 5px 15px;
   }
 }

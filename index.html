@@ -1,7 +1,7 @@
 <!--
  * @Author: lucas Liu lantasy.io@gmail.com
  * @Date: 2024-09-10 15:50:09
- * @LastEditTime: 2024-10-01 16:07:24
+ * @LastEditTime: 2024-10-22 12:04:08
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -13,10 +13,26 @@
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="styles/icomoon/style.css" />
+    <script src="js/index.js"></script>
     <title>Github page</title>
   </head>
   <body>
+    <dialog id="link-dialog">
+      <h1>Create Custom Links</h1>
+      <form id="link-form">
+        <div class="form-field">
+          <label for="link-name">Link Name:</label>
+          <input type="text" id="link-name" name="title" required />
+        </div>
+        <div class="form-field">
+          <label for="link-url">Link URL:</label>
+          <input type="url" id="link-url" name="url" required />
+        </div>
+        <button type="submit" class="submit">Submit</button>
+      </form>
+    </dialog>
     <main>
+      <button id="add-button" onclick="addNewLink()">+</button>
       <side>
         <img
           src="https://cameronmcefee.com/img/work/the-octocat/codercat.jpg"
@@ -29,8 +45,8 @@
         </p>
       </side>
       <section>
-        <ul>
-          <li>
+        <ul id="link-container">
+          <!-- <li>
             <a href="https://www.google.com/" target="_blank">Design album</a>
           </li>
           <li>
@@ -48,7 +64,7 @@
           </li>
           <li>
             <a href="https://www.google.com/" target="_blank">My portfolio</a>
-          </li>
+          </li> -->
         </ul>
       </section>
     </main>
@@ -72,4 +88,10 @@
       <p>&copy; 2024 by Lucas Liu</p>
     </footer>
   </body>
+
+  <!-- link template -->
+  <li id="link-template" style="display: none">
+    <button onclick="removeNode(this)">X</button>
+    <a href="" target="_blank"></a>
+  </li>
 </html>
