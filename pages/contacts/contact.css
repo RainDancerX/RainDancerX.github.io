@@ -3,19 +3,18 @@ make the form in vertical alignment
 make the label and input in the same line
 */
 
-.form-area {
-  width: 50%;
-  margin: 0 auto;
+.form-container {
+  /* make the form in the center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   form {
-    width: 100%;
-    max-width: 500px;
+    width: 60%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     input {
       margin: 20px 0;
       width: 50%;
@@ -26,7 +25,26 @@ make the label and input in the same line
     }
     button {
       margin: 20px 0;
-      width: 20%;
+      width: 60px;
+    }
+  }
+  .goBack:hover {
+    width: 80px;
+    cursor: pointer;
+    color: #f1c40f;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    form {
+      width: 60%;
+      input {
+        width: 70%;
+      }
+      textarea {
+        width: 80%;
+      }
     }
   }
 }
